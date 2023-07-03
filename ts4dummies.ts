@@ -160,3 +160,105 @@ interface Person {
     name: string;
     age: number;
 }
+
+// ==============================================================================================
+
+// Classes and Inheritance:
+
+// Class Declaration:
+// - Classes are declared using the class keyword followed by the class name.
+// The body of the class is defined within curly braces "{}".
+
+class Person {
+    // Class members will be defined here
+}
+
+// Constructors and Initialization:
+// - Constructors are special methods used for initializing class instances.
+// - The constructor method is called automatically when an object is created from the class.
+// - Constructors can accept parameters for initializing properties.
+
+class Person {
+    name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+}
+let person = new Person("Alice");
+
+// Properties and Methods:
+// - Properties represent the characteristics or data associated with a class.
+// - Methods are functions defined within a class and can perform actions or computations.
+
+class Person {
+    name: string;
+    age: number;
+
+    sayHello() {
+        console.log(`Hello, my name is ${this.name}`);
+    }
+}
+
+// Access Modifiers: public, private, protected:
+// - Access modifiers control the visibility and accessibility of class members.
+// - public members are accessible from anywhere.
+// - private members are only accessible within the class.
+// - protected members are accessible within the class and its subclasses.
+
+class Person {
+    private name: string;
+    protected age: number;
+    public city: string;
+
+    constructor(name: string, age: number, city: string) {
+        this.name = name;
+        this.age = age;
+        this.city = city;
+    }
+}
+
+// Inheritance:
+// - Inheritance allows you to create a new class (subclass) based on an existing class (superclass).
+// - Subclasses inherit the properties and methods of the superclass.
+// - The extends keyword is used to establish inheritance between classes.
+
+class Animal {
+    name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    eat() {
+        console.log(`${this.name} is eating.`);
+    }
+}
+
+class Dog extends Animal {
+    bark() {
+        console.log(`${this.name} is barking.`);
+    }
+}
+
+// Abstract Classes:
+// - Abstract classes serve as blueprints for other classes and cannot be instantiated directly.
+// - Abstract classes can contain abstract methods that must be implemented in subclasses.
+// - Abstract methods are defined without an implementation.
+
+abstract class Shape {
+    abstract area(): number;
+}
+
+class Circle extends Shape {
+    radius: number;
+
+    constructor(radius: number) {
+        super();
+        this.radius = radius;
+    }
+
+    area() {
+        return Math.PI * this.radius ** 2;
+    }
+}
