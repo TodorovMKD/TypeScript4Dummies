@@ -93,3 +93,70 @@ let person1 = {
     age: 25,
 };
 
+// Object Properties and Methods:
+// - Properties represent the characteristics or attributes of an object.
+// - Methods are functions defined within an object and can perform actions or computations.
+
+let person2 = {
+    name: "Alice",
+    age: 25,
+    greet() {
+        console.log(`Hello, my name is ${this.name}`);
+    },
+};
+person2.greet(); // Output: Hello, my name is Alice
+
+// Optional Properties:
+// - Properties can be marked as optional using the ? symbol,
+// allowing them to have an undefined or assigned value.
+
+interface Person {
+    name: string;
+    age?: number;
+}
+
+let person3: Person = {
+    name: "Alice",
+};
+
+let person4: Person = {
+    name: "Bob",
+    age: 30,
+};
+
+// Readonly Properties:
+// - Properties can be marked as "readonly",
+// preventing their values from being modified after initialization.
+
+interface Person {
+    readonly name: string;
+    age: number;
+}
+
+let person: Person = {
+    name: "Alice",
+    age: 25,
+};
+person.name = "Alicia"; // Error: Cannot assign to 'name' because it is a read-only property.
+
+// Index Signatures:
+// - Index signatures allow you to define the types
+// for accessing properties dynamically using square brackets.
+
+interface Dictionary {
+    [key: string]: string;
+}
+let dictionary: Dictionary = {
+    apple: "A fruit",
+    car: "A vehicle",
+};
+console.log(dictionary.apple); // Output: A fruit
+
+// Interfaces:
+// - Interfaces define the structure of an object, specifying property names and their types.
+// - They can also include optional and readonly properties, as well as methods.
+
+interface Person {
+    name: string;
+    age: number;
+}
